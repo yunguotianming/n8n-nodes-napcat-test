@@ -1,0 +1,57 @@
+{
+  "name": "n8n-nodes-napcat-test",
+  "version": "0.2.1",
+  "description": "n8n community node for NapCat QQ Bot API integration. 支持QQ机器人消息发送、账号管理等功能的n8n社区节点。",
+  "keywords": [
+    "n8n-community-node-package",
+    "napcat",
+    "qq",
+    "bot",
+    "api"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/yunguotianming/n8n-nodes-napcat",
+  "author": {
+    "name": "NapCat n8n Node",
+    "email": "napcat@example.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yunguotianming/n8n-nodes-napcat.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "node build.js",
+    "build:tsc": "tsc",
+    "dev": "tsc --watch",
+    "format": "prettier nodes credentials --write",
+    "lint": "eslint nodes credentials",
+    "lintfix": "eslint nodes credentials --fix",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/NapCatApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/NapCat/NapCat.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.16",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.42.0",
+    "eslint-plugin-n8n-nodes-base": "^1.11.0",
+    "n8n-workflow": "*",
+    "prettier": "^2.8.8",
+    "typescript": "^5.1.6"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
